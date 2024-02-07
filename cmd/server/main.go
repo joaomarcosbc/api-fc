@@ -38,7 +38,7 @@ func NewProductHandler(db database.ProductInterface) *ProductHandler {
 }
 
 func (h *ProductHandler) CreateProduct(w http.ResponseWriter, r *http.Request) {
-	var product dto.CreateProductrRequest
+	var product dto.CreateProductRequest
 
 	if err := json.NewDecoder(r.Body).Decode(&product); err != nil {
 		w.WriteHeader(http.StatusBadRequest)
